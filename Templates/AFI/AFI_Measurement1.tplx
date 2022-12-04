@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DiagramData>
+	<NV>AFI_Measurement1</NV>
+	<Parameters>
+		<Parameter>
+			<Name>value</Name>
+			<ValueType>Variable</ValueType>
+			<Default>10LIT001</Default>
+		</Parameter>
+	</Parameters>
+	<Properties>
+		<Group>
+			<NV>BasicPars</NV>
+			<Property>
+				<NV>Name</NV>
+				<Value>AFI_Measurement1</Value>
+			</Property>
+			<Property>
+				<NV>DiagramBacgroundPictureMode</NV>
+				<Value>Oryginal</Value>
+			</Property>
+			<Property>
+				<NV>FixedWidth</NV>
+				<Value>250</Value>
+			</Property>
+			<Property>
+				<NV>FixedHeight</NV>
+				<Value>189</Value>
+			</Property>
+			<Property>
+				<NV>UseFixedSizes</NV>
+				<Value>True</Value>
+			</Property>
+		</Group>
+		<Group>Registers</Group>
+		<Group>EventPars</Group>
+	</Properties>
+	<Objects>
+		<Object>
+			<NV>TEXT</NV>
+			<Properties>
+				<Group>
+					<NV>BasicPars</NV>
+					<Property>
+						<NV>Name</NV>
+						<Value>value</Value>
+					</Property>
+					<Property>
+						<NV>X</NV>
+						<Value>315722</Value>
+					</Property>
+					<Property>
+						<NV>Y</NV>
+						<Value>581482</Value>
+					</Property>
+					<Property>
+						<NV>Width</NV>
+						<Value>280001</Value>
+					</Property>
+					<Property>
+						<NV>Height</NV>
+						<Value>89948</Value>
+					</Property>
+					<Property>
+						<NV>MainVar</NV>
+						<Value>%value</Value>
+					</Property>
+					<Property>
+						<NV>ControlEnabled</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>MinVisibleWidth</NV>
+						<Value>1</Value>
+					</Property>
+					<Property>
+						<NV>Hint</NV>
+						<Value>=Attribute("#",Description)</Value>
+					</Property>
+					<Property>
+						<NV>CursorType</NV>
+						<Value>Hand</Value>
+					</Property>
+					<Property>
+						<NV>SizeLock</NV>
+						<Value>False</Value>
+					</Property>
+					<Property>
+						<NV>Padding</NV>
+						<Value>4</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>StatePars</NV>
+					<Property>
+						<NV>Text</NV>
+						<Value>=VarStringValue()+" "+Attribute("Unit")</Value>
+					</Property>
+					<Property>
+						<NV>Color</NV>
+						<Value>White</Value>
+					</Property>
+					<Property>
+						<NV>BackgroundColor</NV>
+						<Value>Black</Value>
+					</Property>
+					<Property>
+						<NV>HorizontalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>VerticalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>OutlineWidth</NV>
+						<Value>1</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameStyle</NV>
+						<Value>Single</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameColor</NV>
+						<Value>Black</Value>
+					</Property>
+					<SubGroup>
+						<Property>
+							<NV>StateCondition</NV>
+							<Value>=VarIsNotGood()</Value>
+						</Property>
+						<Property>
+							<NV>Text</NV>
+							<Value> ####</Value>
+						</Property>
+					</SubGroup>
+				</Group>
+				<Group>
+					<NV>EventPars</NV>
+					<Property>
+						<NV>UserEventMouseLeftClick</NV>
+						<Value>^OpenDiagram(Attribute("Diagram"), "value="+Attribute(Name), ""+Attribute(Description)+" "+Attribute(ChartTitle), $Dialog, $CursorLocation, $CursorLocation, "NoMinButton,NoMaxButton,FixedSize", $None)</Value>
+					</Property>
+					<Property>
+						<NV>UserEventMouseRightClick</NV>
+						<Value>^
+Perform(
+HasRole("Administrator")
+||HasRole("Maintenance")
+||HasRole("Supervisor")
+||HasRole("Operator")
+||HasRole("SystemAdministrator")
+,
+AstrendDisplay("Analog.trnx#"+Parameter(value), "NOW - 24H", "NOW" , 0, 0, 0)
+,
+Script("MesaageNoPermissions")
+)</Value>
+					</Property>
+				</Group>
+			</Properties>
+		</Object>
+	</Objects>
+</DiagramData>
