@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DiagramData>
+	<NV>AFI_ValveREG_B</NV>
+	<Parameters>
+		<Parameter>
+			<Name>par</Name>
+			<ValueType>Variable</ValueType>
+			<Default>0</Default>
+		</Parameter>
+		<Parameter>
+			<Name>pid</Name>
+			<ValueType>MultiLineText</ValueType>
+			<Default>PID_10TV001</Default>
+		</Parameter>
+		<Parameter>
+			<Name>sp2</Name>
+			<ValueType>Integer</ValueType>
+			<Default>0</Default>
+		</Parameter>
+		<Parameter>
+			<Name>sp3</Name>
+			<ValueType>Integer</ValueType>
+			<Default>0</Default>
+		</Parameter>
+		<Parameter>
+			<Name>sp4</Name>
+			<ValueType>SingleLineText</ValueType>
+			<Default />
+		</Parameter>
+		<Parameter>
+			<Name>sp5</Name>
+			<ValueType>SingleLineText</ValueType>
+			<Default />
+		</Parameter>
+		<Parameter>
+			<Name>value</Name>
+			<ValueType>MultiLineText</ValueType>
+			<Default>10PIT004</Default>
+		</Parameter>
+		<Parameter>
+			<Name>vis</Name>
+			<ValueType>Integer</ValueType>
+			<Default>0</Default>
+		</Parameter>
+	</Parameters>
+	<Properties>
+		<Group>
+			<NV>BasicPars</NV>
+			<Property>
+				<NV>Name</NV>
+				<Value>AFI_ValveREG_B</Value>
+			</Property>
+		</Group>
+		<Group>Registers</Group>
+		<Group>EventPars</Group>
+	</Properties>
+	<Objects>
+		<Object>
+			<NV>PICTURE</NV>
+			<Properties>
+				<Group>
+					<NV>BasicPars</NV>
+					<Property>
+						<NV>X</NV>
+						<Value>125001</Value>
+					</Property>
+					<Property>
+						<NV>Y</NV>
+						<Value>253334</Value>
+					</Property>
+					<Property>
+						<NV>Width</NV>
+						<Value>70001</Value>
+					</Property>
+					<Property>
+						<NV>Height</NV>
+						<Value>156668</Value>
+					</Property>
+					<Property>
+						<NV>MainVar</NV>
+						<Value>=Parameter("pid")+"_Out"</Value>
+					</Property>
+					<Property>
+						<NV>ControlEnabled</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>Hint</NV>
+						<Value>=Attribute(Parameter("pid"), Description)</Value>
+					</Property>
+					<Property>
+						<NV>CursorType</NV>
+						<Value>Hand</Value>
+					</Property>
+					<Property>
+						<NV>Scaled</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>KeepAspectRatio</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>Centered</NV>
+						<Value>None</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>StatePars</NV>
+					<Property>
+						<NV>PictureName</NV>
+						<Value>NC_1</Value>
+					</Property>
+					<Property>
+						<NV>Rotation</NV>
+						<Value>None</Value>
+					</Property>
+					<SubGroup>
+						<Property>
+							<NV>StateCondition</NV>
+							<Value>=Variable()&gt;0</Value>
+						</Property>
+						<Property>
+							<NV>PictureName</NV>
+							<Value>NO_1</Value>
+						</Property>
+						<Property>
+							<NV>Rotation</NV>
+							<Value>None</Value>
+						</Property>
+					</SubGroup>
+				</Group>
+				<Group>SvgElements</Group>
+				<Group>
+					<NV>EventPars</NV>
+					<Property>
+						<NV>UserEventMouseLeftClick</NV>
+						<Value>^OpenDiagram("PIDValve_A", 
+"PID="+Attribute(Parameter(pid),Name)
++";Value="+Attribute(Parameter(value),Name)
++";Parameter="+Parameter(par)
++";SP2="+Parameter(sp2)
++";SP3="+Parameter(sp3)
++";SP4="+Parameter(sp4)
++";SP5="+Parameter(sp5)
++";Vis="+Parameter(vis)
+, 
+
+""+Attribute(Parameter("pid"), "Description"), 
+
+$Normal, $CursorLocation, $CursorLocation, "NoMinButton,NoMaxButton,FixedSize", $ExceptCurrent)</Value>
+					</Property>
+				</Group>
+			</Properties>
+		</Object>
+		<Object>
+			<NV>TEXT</NV>
+			<Properties>
+				<Group>
+					<NV>BasicPars</NV>
+					<Property>
+						<NV>X</NV>
+						<Value>83751</Value>
+					</Property>
+					<Property>
+						<NV>Y</NV>
+						<Value>400835</Value>
+					</Property>
+					<Property>
+						<NV>Width</NV>
+						<Value>133334</Value>
+					</Property>
+					<Property>
+						<NV>Height</NV>
+						<Value>56668</Value>
+					</Property>
+					<Property>
+						<NV>MainVar</NV>
+						<Value>%pid</Value>
+					</Property>
+					<Property>
+						<NV>Hint</NV>
+						<Value>=Attribute(Parameter("pid"), Description)</Value>
+					</Property>
+					<Property>
+						<NV>RotationAngle</NV>
+						<Value>0</Value>
+					</Property>
+					<Property>
+						<NV>Padding</NV>
+						<Value>4</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>StatePars</NV>
+					<Property>
+						<NV>Text</NV>
+						<Value>@ChartTitle</Value>
+					</Property>
+					<Property>
+						<NV>BackgroundColor</NV>
+						<Value>WhiteSmoke</Value>
+					</Property>
+					<Property>
+						<NV>HorizontalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>VerticalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameStyle</NV>
+						<Value>Single</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameColor</NV>
+						<Value>Black</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>EventPars</NV>
+					<Property>
+						<NV>UserEventMouseLeftClick</NV>
+						<Value>^OpenDiagram("PIDValve_A", 
+"PID="+Attribute(Parameter(pid),Name)
++";Value="+Attribute(Parameter(value),Name)
++";Parameter="+Parameter(par)
++";SP2="+Parameter(sp2)
++";SP3="+Parameter(sp3)
++";SP4="+Parameter(sp4)
++";SP5="+Parameter(sp5)
++";Vis="+Parameter(vis)
+, 
+
+""+Attribute(Parameter("pid"), "Description"), 
+
+$Normal, $CursorLocation, $CursorLocation, "NoMinButton,NoMaxButton,FixedSize", $ExceptCurrent)</Value>
+					</Property>
+				</Group>
+			</Properties>
+		</Object>
+		<Object>
+			<NV>TEXT</NV>
+			<Properties>
+				<Group>
+					<NV>BasicPars</NV>
+					<Property>
+						<NV>Name</NV>
+						<Value>value</Value>
+					</Property>
+					<Property>
+						<NV>X</NV>
+						<Value>93335</Value>
+					</Property>
+					<Property>
+						<NV>Y</NV>
+						<Value>200829</Value>
+					</Property>
+					<Property>
+						<NV>Width</NV>
+						<Value>133334</Value>
+					</Property>
+					<Property>
+						<NV>Height</NV>
+						<Value>56668</Value>
+					</Property>
+					<Property>
+						<NV>Z</NV>
+						<Value>2</Value>
+					</Property>
+					<Property>
+						<NV>MainVar</NV>
+						<Value>=Parameter("pid")+"_Out"</Value>
+					</Property>
+					<Property>
+						<NV>ControlEnabled</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>MinVisibleWidth</NV>
+						<Value>1</Value>
+					</Property>
+					<Property>
+						<NV>Hint</NV>
+						<Value>=Attribute(Parameter("pid"), Description)</Value>
+					</Property>
+					<Property>
+						<NV>CursorType</NV>
+						<Value>Hand</Value>
+					</Property>
+					<Property>
+						<NV>PositionLock</NV>
+						<Value>False</Value>
+					</Property>
+					<Property>
+						<NV>SizeLock</NV>
+						<Value>False</Value>
+					</Property>
+					<Property>
+						<NV>Padding</NV>
+						<Value>6</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>StatePars</NV>
+					<Property>
+						<NV>Text</NV>
+						<Value>=VarStringValue()+" %"</Value>
+					</Property>
+					<Property>
+						<NV>Color</NV>
+						<Value>White</Value>
+					</Property>
+					<Property>
+						<NV>BackgroundColor</NV>
+						<Value>Black</Value>
+					</Property>
+					<Property>
+						<NV>HorizontalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>VerticalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>OutlineWidth</NV>
+						<Value>1</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameStyle</NV>
+						<Value>Single</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameColor</NV>
+						<Value>Black</Value>
+					</Property>
+					<Property>
+						<NV>FontName</NV>
+						<Value>Arial</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>EventPars</NV>
+					<Property>
+						<NV>UserEventMouseLeftClick</NV>
+						<Value>^OpenDiagram("PIDValve_A", 
+"PID="+Attribute(Parameter(pid),Name)
++";Value="+Attribute(Parameter(value),Name)
++";Parameter="+Parameter(par)
++";SP2="+Parameter(sp2)
++";SP3="+Parameter(sp3)
++";SP4="+Parameter(sp4)
++";SP5="+Parameter(sp5)
++";Vis="+Parameter(vis)
+, 
+
+""+Attribute(Parameter("pid"), "Description"), 
+
+$Normal, $CursorLocation, $CursorLocation, "NoMinButton,NoMaxButton,FixedSize", $ExceptCurrent)</Value>
+					</Property>
+				</Group>
+			</Properties>
+		</Object>
+		<Object>
+			<NV>TEXT</NV>
+			<Properties>
+				<Group>
+					<NV>BasicPars</NV>
+					<Property>
+						<NV>X</NV>
+						<Value>215001</Value>
+					</Property>
+					<Property>
+						<NV>Y</NV>
+						<Value>400835</Value>
+					</Property>
+					<Property>
+						<NV>Width</NV>
+						<Value>28334</Value>
+					</Property>
+					<Property>
+						<NV>Height</NV>
+						<Value>56668</Value>
+					</Property>
+					<Property>
+						<NV>Z</NV>
+						<Value>-1</Value>
+					</Property>
+					<Property>
+						<NV>MainVar</NV>
+						<Value>=Parameter("pid")+"_Man"</Value>
+					</Property>
+					<Property>
+						<NV>ControlEnabled</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>Hint</NV>
+						<Value>=Attribute(Parameter("pid"), Description)</Value>
+					</Property>
+					<Property>
+						<NV>PositionLock</NV>
+						<Value>False</Value>
+					</Property>
+					<Property>
+						<NV>SizeLock</NV>
+						<Value>False</Value>
+					</Property>
+					<Property>
+						<NV>Padding</NV>
+						<Value>7</Value>
+					</Property>
+				</Group>
+				<Group>
+					<NV>StatePars</NV>
+					<Property>
+						<NV>Visible</NV>
+						<Value>True</Value>
+					</Property>
+					<Property>
+						<NV>Text</NV>
+						<Value>A</Value>
+					</Property>
+					<Property>
+						<NV>Color</NV>
+						<Value>Black</Value>
+					</Property>
+					<Property>
+						<NV>BackgroundColor</NV>
+						<Value>!ColourAuto</Value>
+					</Property>
+					<Property>
+						<NV>HorizontalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>VerticalAlign</NV>
+						<Value>Center</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameStyle</NV>
+						<Value>Single</Value>
+					</Property>
+					<Property>
+						<NV>TextFrameColor</NV>
+						<Value>Black</Value>
+					</Property>
+					<Property>
+						<NV>FontStyle</NV>
+						<Value>Regular</Value>
+					</Property>
+					<SubGroup>
+						<Property>
+							<NV>StateCondition</NV>
+							<Value>=Variable()==1</Value>
+						</Property>
+						<Property>
+							<NV>Text</NV>
+							<Value>M</Value>
+						</Property>
+						<Property>
+							<NV>Color</NV>
+							<Value>Black</Value>
+						</Property>
+						<Property>
+							<NV>BackgroundColor</NV>
+							<Value>!ColourMan</Value>
+						</Property>
+					</SubGroup>
+				</Group>
+				<Group>
+					<NV>EventPars</NV>
+					<Property>
+						<NV>UserEventMouseLeftClick</NV>
+						<Value>^OpenDiagram("PIDValve_A", 
+"PID="+Attribute(Parameter(pid),Name)
++";Value="+Attribute(Parameter(value),Name)
++";Parameter="+Parameter(par)
++";SP2="+Parameter(sp2)
++";SP3="+Parameter(sp3)
++";SP4="+Parameter(sp4)
++";SP5="+Parameter(sp5)
++";Vis="+Parameter(vis)
+, 
+
+""+Attribute(Parameter("pid"), "Description"), 
+
+$Normal, $CursorLocation, $CursorLocation, "NoMinButton,NoMaxButton,FixedSize", $ExceptCurrent)</Value>
+					</Property>
+				</Group>
+			</Properties>
+		</Object>
+	</Objects>
+</DiagramData>
